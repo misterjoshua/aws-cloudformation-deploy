@@ -12,7 +12,7 @@ An example of how to use this pipe in a Bitbucket Pipeline step:
 
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy:1
+  - pipe: docker://wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
@@ -34,7 +34,7 @@ script:
 ## Put the template into a build step
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy:1
+  - pipe: docker://wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
@@ -48,7 +48,7 @@ To enter CloudFormation parameters, provide variables named `PARAM_MyParameterNa
 
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy:1
+  - pipe: docker://wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
@@ -64,7 +64,7 @@ To deploy nested stacks, provide the `PACKAGE_BUCKET` variable with the name of 
 
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy:1
+  - pipe: docker://wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
