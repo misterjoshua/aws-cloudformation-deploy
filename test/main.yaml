@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: "2019-04-25"
+Description: >
+  Validation workload for cfn-deploy pipeline script.
+Parameters:
+Resources:
+  NestedStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Import nested.yaml

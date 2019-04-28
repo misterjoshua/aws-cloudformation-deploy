@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: "2019-04-25"
+Description: >
+  Nested template file
+Parameters:
+Resources:
+  NestedStack:
+    Type: AWS::S3::Bucket

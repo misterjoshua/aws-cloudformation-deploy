@@ -1,0 +1,36 @@
+image:
+  name: atlassian/default-image:2
+
+pipelines:
+  default:
+    - step:
+        name: Build
+        services:
+          - docker
+        script:
+          # Log in
+          - echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" $DOCKER_SERVER --password-stdin
+          - VERSION="1.$BITBUCKET_BUILD_NUMBER"
+          # Build the image
+          - docker build -t "build" .
+          - docker tag build "$REPO:$VERSION"
+          - docker tag build "$REPO:latest"
+          - docker tag build "$REPO:1"
+          - docker tag build "build"
+          # Test deploying
+          - pipe: build
+            variables:
+              STACK_NAME: aws-cloudformation-deploy-build
+              PACKAGE_BUCKET: $PACKAGE_BUCKET
+              DEPLOY_TEMPLATE: test/main.yaml
+          - pipe: build
+            variables:
+              ACTION: delete
+              STACK_NAME: aws-cloudformation-deploy-build
+          # Release it
+          - docker push "$REPO"
+          - git tag -a "$VERSION" -m "Tagging for release $VERSION"
+          - git tag -a "latest" -m "Tagging for release $VERSION"
+          - git tag -a "1" -m "Tagging for release $VERSION"
+          - git push origin
+        
