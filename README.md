@@ -26,8 +26,8 @@ script:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       AWS_DEFAULT_REGION: 'us-east-1'
-      DEPLOY_TEMPLATE=yourtemplate.yaml
-      STACK_NAME=MyStackName
+      DEPLOY_TEMPLATE: 'yourtemplate.yaml'
+      STACK_NAME: 'MyStackName'
 ```
 
 ## Use Template Parameters
@@ -40,10 +40,10 @@ script:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       AWS_DEFAULT_REGION: 'us-east-1'
-      DEPLOY_TEMPLATE=yourtemplate.yaml
-      STACK_NAME=MyStackName
-      PARAM_MyParamName=MyParamValue
-      PARAM_MyOtherParamName=MyOtherParamValue
+      DEPLOY_TEMPLATE: 'yourtemplate.yaml'
+      STACK_NAME: 'MyStackName'
+      PARAM_MyParamName: 'MyParamValue'
+      PARAM_MyOtherParamName: 'MyOtherParamValue'
 ```
 
 ## Nested Stacks
@@ -56,9 +56,9 @@ script:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       AWS_DEFAULT_REGION: 'us-east-1'
-      DEPLOY_TEMPLATE=yourtemplate.yaml
-      STACK_NAME=MyStackName
-      PACKAGE_BUCKET=my-s3-bucket
+      DEPLOY_TEMPLATE: 'yourtemplate.yaml'
+      STACK_NAME: 'MyStackName'
+      PACKAGE_BUCKET: 'my-s3-bucket'
 ```
 
 # License
