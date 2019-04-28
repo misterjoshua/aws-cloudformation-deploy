@@ -3,4 +3,4 @@
 set -ex
 
 echo "Validate.sh"
-wait 60
+sleep 120

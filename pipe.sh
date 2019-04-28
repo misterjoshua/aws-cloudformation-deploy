@@ -82,7 +82,6 @@ if [ ! -z "$WAIT_FOR" ]; then
     echo "Waiting for $WAIT_FOR to be available."
     while [ ! -f "$WAIT_FOR" ]; do
         sleep 1;
-        find /app
     done
 fi
 
