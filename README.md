@@ -6,7 +6,20 @@
 * [`1`, `latest` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
 
 # What is this repository?
-This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket pipelines.
+This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket Pipelines.
+
+An example of how to use this pipe in a Bitbucket Pipeline step:
+
+```
+script:
+  - pipe: wheatstalk/aws-cloudformation-deploy:1
+    variables:
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      AWS_DEFAULT_REGION: 'us-east-1'
+      DEPLOY_TEMPLATE: 'yourtemplate.yaml'
+      STACK_NAME: 'MyStackName'
+```
 
 # What is AWS CloudFormation?
 [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) is a service that helps you model and set up your Amazon Web Services resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS. You create a template that describes all the AWS resources that you want (like Amazon EC2 instances or Amazon RDS DB instances), and AWS CloudFormation takes care of provisioning and configuring those resources for you.
