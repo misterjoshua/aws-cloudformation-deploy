@@ -9,10 +9,10 @@ services:
       - DEPLOY_TEMPLATE=/test/main.yaml
       - DEBUG=true
       - PARAM_MyTestParam=testing
-      - PACKAGE_BUCKET=
-      - AWS_DEFAULT_REGION=
-      - AWS_SECRET_ACCESS_KEY=
-      - AWS_ACCESS_KEY_ID=
+      # - PACKAGE_BUCKET=
+      # - AWS_DEFAULT_REGION=
+      # - AWS_SECRET_ACCESS_KEY=
+      # - AWS_ACCESS_KEY_ID=
     volumes:
       - data-volume:/test
   # Testing script
