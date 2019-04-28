@@ -1,4 +1,8 @@
 FROM python:3-alpine
-RUN apk add bash rsync
-RUN pip install awscli
+RUN apk -v --update add \
+        bash \
+        rsync \
+        jq \
+        && \
+    pip install awscli
 COPY . /setup/

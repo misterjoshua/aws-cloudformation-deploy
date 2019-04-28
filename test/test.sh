@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -ex
+set -e
 
-rsync -av /setup /test
+rsync -av --delete /setup/ /test
 touch /test/ready
 
 # Wait for deployment to finish.

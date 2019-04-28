@@ -49,6 +49,10 @@ function deploy_stack() {
         $DEPLOY_PARAMETERS_OPT \
         $DEPLOY_TAGS_OPT \
         $OPTS
+
+    if [ ! -z "$WHEN_DONE" ]; then
+        echo "$STACK_NAME" >$WHEN_DONE
+    fi
 }
 
 function delete_stack() {
@@ -93,7 +97,3 @@ case "$ACTION" in
     deploy) deploy_stack ;;
     delete) delete_stack ;;
 esac
-
-if [ ! -z "$WHEN_DONE" ]; then
-    echo "$STACK_NAME" >$WHEN_DONE
-fi

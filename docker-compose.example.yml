@@ -1,3 +1,10 @@
+# Test locally:
+# docker-compose -f .\docker-compose.test.yml up --build
+#
+# Note:
+# I don't want to put this into docker hub's autotest as I don't want to risk
+# opening my AWS up for all pull requests to spin up resources. :) If you
+# want to test this yourself, just fill in the details below.
 version: "2"
 services:
   # Set up a deployer
@@ -21,6 +28,10 @@ services:
       - deploy
     build: test/
     command: /setup/test.sh
+    # environment:
+    #   - AWS_DEFAULT_REGION=
+    #   - AWS_SECRET_ACCESS_KEY=
+    #   - AWS_ACCESS_KEY_ID=
     volumes:
       - data-volume:/test
 
