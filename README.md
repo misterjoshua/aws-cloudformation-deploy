@@ -5,6 +5,9 @@
 ## Simple Tags
 * [`1`, `latest` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
 
+# What is this repository?
+This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket pipelines.
+
 # What is AWS CloudFormation?
 [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) is a service that helps you model and set up your Amazon Web Services resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS. You create a template that describes all the AWS resources that you want (like Amazon EC2 instances or Amazon RDS DB instances), and AWS CloudFormation takes care of provisioning and configuring those resources for you.
 
@@ -13,9 +16,6 @@
 
 ## What are "Pipes" in Bitbucket Pipelines?
 [Pipes simplify configuring your pipeline.](https://confluence.atlassian.com/bitbucket/pipes-958765631.html) They are extra powerful for actions that normally take several lines of code, especially when you want to work with third party tools. You just paste the pipe, supply a few key pieces of information, and the rest is done for you.
-
-# What is this repository?
-This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket pipelines.
 
 # How to use this image
 ## Put the template into a build step
