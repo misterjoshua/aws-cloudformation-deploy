@@ -37,7 +37,7 @@ function deploy_stack() {
             --s3-bucket "$PACKAGE_BUCKET" \
             --output-template-file "/tmp/package"
         DEPLOY_TEMPLATE="/tmp/package"
-    else
+    fi
 
     echo "Deploying $STACK_NAME from $DEPLOY_TEMPLATE"
     echo "Template parameters:"
@@ -80,7 +80,10 @@ export DEPLOY_TAGS=${DEPLOY_TAGS}
 # Wait for a file to exist before proceeding.
 if [ ! -z "$WAIT_FOR" ]; then
     echo "Waiting for $WAIT_FOR to be available."
-    while [ ! -f "$WAIT_FOR" ]; do sleep 1; done
+    while [ ! -f "$WAIT_FOR" ]; do
+        sleep 1;
+        find /app
+    done
 fi
 
 case "$ACTION" in

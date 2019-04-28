@@ -1,0 +1,29 @@
+version: "2"
+services:
+  # Provide the build files to test.
+  setup:
+    build: test/
+    command: bash -c "rsync -av --delete /setup/ /app; find /app"
+    volumes:
+      - data-volume:/app
+  # Test a deployment.
+  deploy:
+    depends_on:
+      - setup
+    build: .
+    environment:
+      - WAIT_FOR=/app/main.yaml
+      - DEPLOY_TEMPLATE=/app/main.yaml
+      - DEBUG=true
+    volumes:
+      - data-volume:/app
+  # Test the installer
+  sut:
+    depends_on:
+      - setup
+      - deploy
+    build: test/
+    command: /setup/validate.sh
+
+volumes:
+  data-volume: ~
