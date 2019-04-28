@@ -1,0 +1,1 @@
+<img src="https://img.shields.io/docker/cloud/automated/wheatstalk/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/docker/cloud/build/wheatstalk/aws-cloudformation-deploy.svg" />
