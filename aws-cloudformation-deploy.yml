@@ -1,0 +1,27 @@
+name: AWS CloudFormation
+description: Perform a resource deployment using AWS CloudFormation.
+repositoryPath: 'wheatstalk/aws-cloudformation-deploy'
+version: '1'
+vendor:
+  name: Amazon
+  website: https://aws.amazon.com/
+maintainer:
+  name: misterjoshua
+  website: https://github.com/misterjoshua/aws-cloudformation-deploy
+yml: |
+  - pipe: wheatstalk/aws-cloudformation-deploy:1
+    variables:
+      AWS_ACCESS_KEY_ID: '<string>'
+      AWS_SECRET_ACCESS_KEY: '<string>'
+      AWS_DEFAULT_REGION: '<string>'
+      DEPLOY_TEMPLATE: '<filename>'
+      
+      # Pick your own stack name
+      # STACK_NAME: '<string>'
+
+      # Provide parameters
+      # PARAM_MyParamName: 'MyParamValue'
+      # PARAM_MyOtherParamName: 'MyOtherParamValue'
+      
+      # Allow nested stacks
+      # PACKAGE_BUCKET: 'my-s3-bucket'
