@@ -21,7 +21,7 @@ This repository implements a CloudFormation deployment pipe for Bitbucket Pipeli
 ## Put the template into a build step
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy
+  - pipe: wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
@@ -35,7 +35,7 @@ To enter CloudFormation parameters, provide variables named `PARAM_MyParameterNa
 
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy
+  - pipe: wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
@@ -47,11 +47,11 @@ script:
 ```
 
 ## Nested Stacks
-To allow nested stack, provide the `PACKAGE_BUCKET` variable with the name of an S3 bucket that can hold the intermediary files.
+To deploy nested stacks, provide the `PACKAGE_BUCKET` variable with the name of an S3 bucket that can hold the intermediary files. The pipe will automatically run `aws cloudformation package` for you and deploy the output.
 
 ```
 script:
-  - pipe: wheatstalk/aws-cloudformation-deploy
+  - pipe: wheatstalk/aws-cloudformation-deploy:1
     variables:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID # using one of my repository variables
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
