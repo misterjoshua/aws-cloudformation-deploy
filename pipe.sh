@@ -22,7 +22,7 @@ function deploy_stack() {
 
     # Add template parameters if available.
     if [ ! -z "$DEPLOY_PARAMETERS" ]; then
-        DEPLOY_PARAMETERS_OPT="--template-parameters $DEPLOY_PARAMETERS"
+        DEPLOY_PARAMETERS_OPT="--parameter-overrides $DEPLOY_PARAMETERS"
     fi
     # Add tags if available.
     if [ ! -z "$DEPLOY_TAGS" ]; then
@@ -77,6 +77,10 @@ export DEPLOY_TEMPLATE=${DEPLOY_TEMPLATE}
 export DEPLOY_PARAMETERS=${DEPLOY_PARAMETERS}
 export DEPLOY_TAGS=${DEPLOY_TAGS}
 
+# Synchronization
+export WAIT_FOR=${WAIT_FOR}
+export WHEN_DONE=${WHEN_DONE}
+
 # Wait for a file to exist before proceeding.
 if [ ! -z "$WAIT_FOR" ]; then
     echo "Waiting for $WAIT_FOR to be available."
@@ -89,3 +93,7 @@ case "$ACTION" in
     deploy) deploy_stack ;;
     delete) delete_stack ;;
 esac
+
+if [ ! -z "$WHEN_DONE" ]; then
+    echo "$STACK_NAME" >$WHEN_DONE
+fi
