@@ -1,9 +1,9 @@
-<img src="https://img.shields.io/docker/cloud/automated/wheatstalk/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/docker/cloud/build/wheatstalk/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/github/tag/misterjoshua/aws-cloudformation-deploy.svg" />
+<img src="https://img.shields.io/docker/cloud/automated/wheatstalk/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/github/tag/misterjoshua/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/docker/cloud/build/wheatstalk/aws-cloudformation-deploy.svg" /> <img src="https://img.shields.io/bitbucket/pipelines/sidepix/test-aws-cloudformation-deploy.svg?label=pipeline%20test" />
 
 # Supported tags and respective `Dockerfile` links
 
 ## Simple Tags
-* [`0`, `0.1`, `0.1.6` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
+* [`0`, `0.1`, `0.1.7` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
 
 # What is this repository?
 This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket Pipelines.
