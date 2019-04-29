@@ -8,12 +8,14 @@ if echo $DOCKER_TAG | egrep "^[0-9]+\.[0-9]+\.[0-9]+"; then
     echo "Tagging major: $MAJOR"
     docker tag "$IMAGE_NAME" "$DOCKER_REPO:$MAJOR"
     docker push "$DOCKER_REPO:$MAJOR"
+
     echo "Tagging minor: $MINOR"
     docker tag "$IMAGE_NAME" "$DOCKER_REPO:$MINOR"
-    docker push "$DOCKER_REPO:$MAJOR"
+    docker push "$DOCKER_REPO:$MINOR"
+
     echo "Tagging patch: $PATCH"
     docker tag "$IMAGE_NAME" "$DOCKER_REPO:$PATCH"
-    docker push "$DOCKER_REPO:$MAJOR"
+    docker push "$DOCKER_REPO:$PATCH"
 else
     echo "Not tagging $DOCKER_TAG"
 fi

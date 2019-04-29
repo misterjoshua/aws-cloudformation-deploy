@@ -3,7 +3,7 @@
 # Supported tags and respective `Dockerfile` links
 
 ## Simple Tags
-* [`0.1.2` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
+* [`0`, `0.1`, `0.1.3` *(Dockerfile)*](https://github.com/misterjoshua/aws-cloudformation-deploy/blob/master/Dockerfile)
 
 # What is this repository?
 This repository implements a CloudFormation deployment pipe for Bitbucket Pipelines. With this pipe you can deploy a CloudFormation template into a stack from a CI/CD pipeline hosted in Bitbucket Pipelines.
